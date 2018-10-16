@@ -31,6 +31,59 @@
         <buildTimestamp>${maven.build.timestamp}</buildTimestamp>
   </properties>
 
+
+
+
+  
+    <!-- =============================================================== -->
+    <!-- Profils -->
+    <!-- =============================================================== -->
+    <profiles>
+        <!-- Profil pour l'environnement de développement -->
+        <profile>
+            <id>target-dev</id>
+        </profile>
+
+        <!-- Profil pour l'environnement de test -->
+        <profile>
+            <id>target-test</id>
+        </profile>
+
+        <!-- Profil pour l'environnement de production -->
+        <profile>
+            <id>target-prod</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-enforcer-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>enforce-target-prod-no-snapshot</id>
+                                <phase>validate</phase>
+                                <goals>
+                                    <goal>enforce</goal>
+                                </goals>
+                                <configuration>
+                                    <rules>
+                                        <!-- Le projet et son parent ne doivent pas être en SNAPSHOT -->
+                                        <requireReleaseVersion />
+                                        <!-- Aucune dépendance ne doit être en SNAPSHOT -->
+                                        <requireReleaseDeps />
+                                    </rules>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>  
+
+
+
+
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
