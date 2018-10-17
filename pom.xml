@@ -26,6 +26,16 @@
     <module>ticket-model</module>
   </modules>
   
+
+    <!-- =============================================================== -->
+    <!-- DistributionManagement -->
+    <!-- =============================================================== -->
+    <distributionManagement>
+        <site>
+            <id>site-projet</id>
+            <url>scp://exemple.org/www/</url>
+        </site>
+    </distributionManagement>
   
     <!-- =============================================================== -->
     <!-- Build -->
@@ -51,6 +61,15 @@
         <!-- ===== Gestion des plugins ===== -->
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.7.1</version>
+                    <configuration>
+                        <!-- Je veux le site en français -->
+                        <locales>fr</locales>
+                    </configuration>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
@@ -111,7 +130,18 @@
 
     </build>  
   
-  
+    <!-- =============================================================== -->
+    <!-- Gestion des rapports -->
+    <!-- =============================================================== -->
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.7</version>
+            </plugin>
+        </plugins>
+    </reporting>  
 
     <dependencyManagement>
         <dependencies>
