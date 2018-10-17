@@ -20,6 +20,7 @@
   	<name>
   		Freelance
   	</name>
+  	<url>http://www.example.com</url>
   </organization>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
