@@ -18,6 +18,11 @@
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
           crossorigin="anonymous" />
     <link rel="stylesheet" href="../style/custom.css" />
+    <style>
+    body{
+    	margin-top:82px;
+    }
+    </style>
 </head>
 
 
