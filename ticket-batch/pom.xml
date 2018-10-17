@@ -53,6 +53,8 @@
                  <manifest>
                      <mainClass>org.exemple.demo.batch.App</mainClass>
                      <addClasspath>true</addClasspath>
+                     <!--  Jar de dépendance dans la même repertoire que ticket-batch 
+                     on laisse donc a vide -->
                      <classpathPrefix></classpathPrefix>
                  </manifest>
              </archive>
